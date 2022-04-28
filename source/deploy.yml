@@ -1,0 +1,58 @@
+name: Hexo Deploy CI
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest 
+        
+    steps:
+    - name: Checkout Repository master branch
+      uses: actions/checkout@master 
+
+    - name: Setup Node.js
+      uses: actions/setup-node@master
+      with:
+        node-version: "14"
+
+    - name: Setup Hexo Dependencies
+      run: |
+        node -v
+        npm install hexo-cli pnpm -g
+        pnpm install
+        hexo version
+
+    - name: Setup Deploy Private Key
+      env:
+        HEXO_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_ed25519
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+    - name: Setup Git Infomation
+      run: | 
+        git config --global user.email "deploy@cols.ro"
+        git config --global user.name "Deploy"
+
+    - name: Other
+      run: |
+        ls -la ~
+        echo "blog.cols.ro" > source/CNAME
+        
+
+    - name: Deploy Hexo 
+      run: |
+        hexo clean
+        hexo generate 
+        cd public
+        git init
+        git add .
+        git commit -m "Deploy Via Actions,$(date '+%Y-%m-%d %H:%M:%S')"
+        git push git@github.com:Colsro/blog-public.git master -f
+        echo "Deploy Done"

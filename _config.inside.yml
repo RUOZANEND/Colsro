@@ -1,0 +1,258 @@
+# ---------------------------------------------------------------
+# Basic
+# ---------------------------------------------------------------
+
+# Appearance
+appearance:
+  accent_color: '#2a2b33'
+  foreground_color: '#363636'
+  border_color: '#e0e0e0'
+  background: '#f5f7fa'
+  sidebar_background: '#656565'
+  card_background: '#fff'
+
+  # Maximum width of content
+  content_width: 640
+
+  # Fonts
+  font:
+    url: //fonts.googleapis.com/css?family=Inconsolata|Josefin+Sans
+    base: "'PingFang SC', 'Josefin Sans'"
+    logo: "Josefin Sans"
+    menu: 'Josefin Sans'
+    label: "Josefin Sans"
+    heading:
+    code: Inconsolata, monospace
+    print:
+
+  # Code Syntax Highlighting
+  highlight: [
+  '#1d1f21', '#282a2e', '#373b41', '#969896',
+  '#b4b7b4', '#c5c8c6', '#e0e0e0', '#ffffff',
+  '#cc342b', '#f96a38', '#fba922', '#198844',
+  '#3971ed', '#3971ed', '#a36ac7', '#3971ed'
+  ]
+
+  # Darkmode
+  darkmode:
+    accent_color: '#539bf5'
+    foreground_color: '#adbac7'
+    border_color: '#373e47'
+    background: '#22272e'
+    sidebar_background: '#22272e'
+    card_background: '#2d333b'
+    highlight: [
+      '#2d333b', '#444c56', '#3e4451', '#545862',
+      '#565c64', '#abb2bf', '#b6bdca', '#c8ccd4',
+      '#e06c75', '#d19a66', '#e5c07b', '#98c379',
+      '#56b6c2', '#61afef', '#c678dd', '#be5046'
+    ]
+
+# Sidebar profile
+profile:
+  email: i@cols.ro
+  avatar: 'https://thirdqq.qlogo.cn/g?b=sdk&k=knEbrefjhWkYMoNMZEh0HA&s=160'
+  bio: 一只变成🕊的🐟
+
+# Sidebar navigation links
+menu:
+  🏠　主页: /
+  🔗　邻居: /links
+  🥳　关于: /about
+  📝　留言: /messages
+  🔍　搜索: /search
+
+# Social media URL
+sns:
+  - icon: email
+    title: Email
+    url: i@cols.ro
+  - icon: feed
+    title: Feed
+    url: /feed.xml
+  - icon: github
+    title: Github
+    url: https://github.com/colsro
+  - icon: qq
+    title: ZR
+    url: /
+
+# Sidebar footer copyright info
+footer:
+  copyright: &copy; 2019-2022 ❤️ <a href="/">colsro</a>
+  powered: true
+  theme: true
+  custom: Hosted by <a target="_blank" rel="external nofollow"
+    href="https://cloud.oracle.com/"><b>Oracle Cloud</b></a>
+     | CDN by <a target="_blank" rel="external nofollow"
+    href="https://cloudflare.com/"><b>CloudFlare</b></a>
+
+# ---------------------------------------------------------------
+# Content
+# ---------------------------------------------------------------
+
+# Page
+page:
+  toc: false
+  reward: true
+  copyright: false
+
+# Post
+post:
+  per_page: 6
+  reading_time: false
+  # reading_time:
+  #   wpm: 150
+  #   text: ":words words in :minutes min"
+  toc: true
+  reward: true
+  copyright: true
+
+# Archive
+archive:
+  per_page: 8
+
+# Tag
+tag:
+  per_page: 8
+
+# Category
+category:
+  per_page: 8
+
+# Search
+search:
+  fab: true
+  page: true
+
+  adapter:
+    range:
+      - post
+      - page
+
+    limit: 10000
+    per_page: 5
+
+# ---------------------------------------------------------------
+# Content addons
+# ---------------------------------------------------------------
+
+# Prefix/Suffix of image URL, useful for CDN
+assets:
+  # prefix: '//cdn.jsdelivr.net/gh/Colsro/static@master'
+  # suffix: '?m=webp&q=80'
+
+# Table of content
+toc:
+  depth: 3
+  index: false
+
+# Reward
+reward:
+  text: Buy me a cup of coffee ☕.
+  methods:
+    - name: alipay
+      qrcode: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAJqAQMAAACCYvjAAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRFAKDp////fokO+QAAAtxJREFUeJzt3T1u4kAYgOEvSpFyj8BROBocjaP4CC5TRMza84dJs5uQQYI8bxOyXulx98kzHhIhSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSfdpl3pTxJ+0ubD8tnR6vfyPDzqdTqfTv6bXD69pelmAeMvIy3IvaY7lt0Wf6n850Ol0Ov0R9TZMpigfjxH79eflwnpb6Z1Op9Pp9Bv0OuOO7elljsN7H350Op1Of3h9/b0ju1RIOp1Op9Nv0UsZmaN4p7xitjzW3HW9jk6n0+kj9F7TF2R/LuOn6D06nU6n02/tkPffUx5+i34HkU6n0+nDalOmD5NlyrShkndG9h+xO68v2r6tW+N0Op1Op3+pQpbKqY3lRs7rhXl7IzFixYxOp9Ppo/VdHS1Rp0y0Uxvpas1q/mmXTqfT6b9Dr0gUMpVTG+uMKy9g9XsZ8yRFp9Pp9LF67lDWrNrSVJ4r06eHnP6RTqfT6fT/rcy4yBsgqb9nVS7EHVbM6HQ6nT5WjyjPMmvnOkza8lW7MI2ccXQ6nU5/ar1ss59ifZ2qnwGvb/MeMpkvDFoxo9PpdPpYfddem63DJDYPMOniDVuzotPpdPqT67lTlMMZ5VnmVK8e2hcabpbS6HQ6nf5YelzNlXov7X3avGWSGzRl6HQ6nf7ketkAuT7q/VK3Q1J9m3cetWJGp9Pp9Pvo/RBe2wwvh8Nbc9QbodPpdDr9e33+ftpo31tYDw3S6XQ6/fH03WWSTO2PF6X61y7my85IGrsDTqfT6fRn1euH1+0a2X79sf5rm3HjvlGKTqfT6aP1zV/inuuNtDWr41udQOPes6LT6XT6b9Kzd8oPOfPlbGDfiqfT6XT6I+sppXYGfNp8CUjt+NM4nU6n059fL11tgOzTqpfjHB9l9yQGvc1Lp9Pp9MF6b7MDns71Qtn2vvP+O51Op9OfRZckSZIkSZIkSfp3fwGX5/1qcwQyRAAAAABJRU5ErkJggg==
+      url: https://qr.alipay.com/fkx10798li5c4tabyfjsid2
+      text: This a Alipay link
+      color: '#00a0e9'
+
+# Copyright notice
+copyright:
+  author: true
+  link: true
+  license: 署名-非商业性使用-相同方式共享 4.0 国际（<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>）
+
+
+# Comments
+comments:
+
+# ---------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------
+# Favicon
+favicon: /favicon.ico
+
+# Google analytics
+# ga: UA-00000000-0
+
+# SEO
+seo:
+  structured_data: true
+  ssr: true
+
+# PWA
+pwa:
+  workbox:
+    cdn: https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js
+    module_path_prefix: https://g.alicdn.com/kg/workbox/3.3.0/
+    expire: 4
+    name: sw.js
+    rules:
+      - name: jsdelivr
+        strategy: staleWhileRevalidate
+        regex: https://cdn\\.jsdelivr\\.net
+      - name: gtm
+        strategy: staleWhileRevalidate
+        regex: https://www\\.googletagmanager\\.com\?id=.*
+      - name: theme
+        strategy: staleWhileRevalidate
+        regex: /.*\\.(?:js|css|woff2|png|jpg|gif)$
+      - name: cdn
+        strategy: staleWhileRevalidate
+        regex: https://z-fs\\.cols\\.ro
+      - name: json
+        strategy: cacheFirst
+        regex: /api/.*\\.json
+
+  manifest:
+    short_name: Colsro
+    name: Colsro
+    description: "暂若的博客，日常咕咕咕~"
+    display: standalone
+    start_url: /
+    theme_color: '#2a2b33'
+    background_color: '#ececea'
+    icons:
+      - src: /icons/zr-c512.png
+        sizes: 512x512
+        type: image/png
+        purpose: any
+      - src: /icons/zr-c256.png
+        sizes: 256x256
+        type: image/png
+        purpose: any
+      - src: /icons/zr-c128.png
+        sizes: 128x128
+        type: image/png
+        purpose: any
+
+# Plugins
+plugins:
+  - palette:
+      col: 6
+      theme: [
+        '#c9c0d3',
+        '#9ca8b8',
+        '#b5c4b1',
+        '#c5b8a5',
+        '#9ca8b8',
+        '#2a2b33'
+      ]
+  - position: comments
+    template: |
+      <div style="text-align:center" id="waline-comment" onclick="loadcomment()"><p id="loadcomment">点击加载评论📝</p></div>
+      <script>
+      function loadcomment(){
+          var loading = document.getElementById("loadcomment");
+              loading.innerHTML = "加载中。。。";
+          Waline({
+              el: '#waline-comment',
+              serverURL: 'https://waline-colsro.vercel.app',
+              emoji: [
+                'https://z-fs.cols.ro/emojis/tw-emoji'
+              ],
+              });
+      }
+      </script>
+      <script src="//cdn.jsdelivr.net/npm/@waline/client" async></script>
